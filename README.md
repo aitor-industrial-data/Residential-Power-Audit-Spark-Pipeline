@@ -19,7 +19,7 @@
 
 </div>
 
-## Índice
+## <span style="color:#117864; font-weight:700;">Índice</span>
 
 1. [El problema](#1-el-problema)
 2. [Resultados de un vistazo](#2-resultados-de-un-vistazo)
@@ -33,7 +33,7 @@
 
 ---
 
-## 1. El problema
+## <span style="color:#117864;; font-weight:700;">1. El problema</span>
 
 La mayoría de instalaciones residenciales **pagan de más en electricidad** sin saberlo — no por consumir demasiado, sino por ineficiencias que ninguna factura muestra:
 
@@ -45,7 +45,7 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 
 ---
 
-## 2. Resultados de un vistazo
+## <span style="color:#117864; font-weight:700;">2. Resultados de un vistazo</span>
 
 | Métrica | Valor |
 |---|---|
@@ -58,7 +58,7 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 
 ---
 
-## 3. Las 4 hipótesis
+## <span style="color:#117864; font-weight:700;">3. Las 4 hipótesis</span>
 
 ### H1 · Optimización de curva de carga ✅ Validada
 
@@ -145,7 +145,7 @@ El análisis descarta por completo la instalación interna como causa: la vivien
 
 ---
 
-## 4. Impacto económico
+## <span style="color:#117864; font-weight:700;">4. Impacto económico</span>
 
 > Cálculos sobre tarifa PVPC española 2025: **~60 €/kW·año** en término de potencia · **0,137 €/kWh** en energía (fuente: REE / CNMC). El dataset es de una vivienda en Francia — los hallazgos se extrapolan al mercado tarifario español, contexto de aplicación profesional del análisis.
 
@@ -160,7 +160,7 @@ El análisis descarta por completo la instalación interna como causa: la vivien
 
 ---
 
-## 5. Ejecución rápida
+## <span style="color:#117864; font-weight:700;">5. Ejecución rápida</span>
 
 ```bash
 git clone https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline.git
@@ -190,7 +190,7 @@ docker compose down -v   # apaga y borra volúmenes (reseteo total)
 
 ---
 
-## 6. Estructura del proyecto
+## <span style="color:#117864; font-weight:700;">6. Estructura del proyecto</span>
 
 ```
 Residential-Power-Audit-Spark-Pipeline/
@@ -231,7 +231,7 @@ Residential-Power-Audit-Spark-Pipeline/
 
 ---
 
-## 7. Documentación técnica
+## <span style="color:#117864; font-weight:700;">7. Documentación técnica</span>
 
 | Documento | Descripción |
 |---|---|
@@ -242,7 +242,7 @@ Residential-Power-Audit-Spark-Pipeline/
 
 ---
 
-## 8. Stack tecnológico
+## <span style="color:#117864; font-weight:700;">8. Stack tecnológico</span>
 
 ```
 Apache Spark 4.0 (PySpark)       Motor de computación distribuida en memoria
@@ -257,7 +257,7 @@ Docker + JupyterLab               Entorno reproducible sin configuración manual
 
 ---
 
-## 9. Sobre el autor
+## <span style="color:#117864; font-weight:700;">9. Sobre el autor</span>
 
 **Aitor** — Ingeniero Técnico Industrial Eléctrico con 10 años en automatización industrial, diseño eléctrico y sistemas de control. Aplico ese dominio técnico a proyectos de Data Engineering donde el contexto de negocio marca la diferencia entre un análisis correcto y uno útil.
 
