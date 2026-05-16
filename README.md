@@ -75,7 +75,7 @@ Aplicando **window functions** sobre el histórico horario del circuito de cocin
 
 El ratio de standby medido es del **37,66%** — más del doble del umbral planteado. Mediante **análisis NILM** (*Non-Intrusive Load Monitoring*) sobre el circuito "Otros", se aisló una carga cíclica con delta de ~0,24 kW y un **Duty Cycle del 19,78%**: firma característica de un compresor de refrigeración pre-Inverter conectado fuera del circuito de cocina monitorizado (probable arcón o vinoteca).
 
-**Conclusión:** el equipo presenta salud mecánica óptima (Duty Cycle < 25%) pero obsolescencia energética evidente. La sustitución por tecnología Inverter no es mantenimiento — es una decisión de inversión con ROI calculado.
+**Conclusión:** el equipo presenta salud mecánica óptima (Duty Cycle < 25%) pero obsolescencia energética evidente. Su sustitución por tecnología Inverter representa una inversión de capital (CAPEX) justificable, respaldada por el ROI derivado de la reducción directa del consumo base.
 
 <details>
 <summary><b>📈 Ver evidencia — Firma NILM: circuito "Otros" vs. perfil histórico</b></summary>
