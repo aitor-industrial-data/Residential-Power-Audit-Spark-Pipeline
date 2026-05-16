@@ -21,9 +21,9 @@
 
 ## Índice
 
-- [1. El problema](#el-problema)
-- [2. Resultados de un vistazo](#resultados-de-un-vistazo)
-- [3. Las 4 hipótesis](#las-4-hipótesis)
+- [1. El problema](#1.-el-problema)
+- [2. Resultados de un vistazo](#2.-resultados-de-un-vistazo)
+- [3. Las 4 hipótesis](#3.-las-4-hipótesis)
 - [4. Impacto económico](#impacto-económico)
 - [5. Ejecución rápida](#ejecución-rápida)
 - [6. Estructura del proyecto](#estructura-del-proyecto)
