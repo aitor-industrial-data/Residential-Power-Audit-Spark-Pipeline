@@ -21,15 +21,15 @@
 
 ## Índice
 
-- [1. El problema](#1.-el-problema)
-- [2. Resultados de un vistazo](#2.-resultados-de-un-vistazo)
-- [3. Las 4 hipótesis](#3.-las-4-hipótesis)
-- [4. Impacto económico](#impacto-económico)
-- [5. Ejecución rápida](#ejecución-rápida)
-- [6. Estructura del proyecto](#estructura-del-proyecto)
-- [7. Documentación técnica](#documentación-técnica)
-- [8. Stack tecnológico](#stack-tecnológico)
-- [9. Sobre el autor](#sobre-el-autor)
+1. [El problema](#1-el-problema)
+2. [Resultados de un vistazo](#2-resultados-de-un-vistazo)
+3. [Las 4 hipótesis](#3-las-4-hipótesis)
+4. [Impacto económico](#4-impacto-económico)
+5. [Ejecución rápida](#5-ejecución-rápida)
+6. [Estructura del proyecto](#6-estructura-del-proyecto)
+7. [Documentación técnica](#7-documentación-técnica)
+8. [Stack tecnológico](#8-stack-tecnológico)
+9. [Sobre el autor](#9-sobre-el-autor)
 
 ---
 
