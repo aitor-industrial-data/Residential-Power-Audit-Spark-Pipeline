@@ -1,0 +1,32 @@
+# Entornos virtuales y Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Datos y Bases de Datos (Se gestionan por script o volúmenes)
+*.db
+*.sqlite
+data_storage/
+
+# Logs y Spark
+*.log
+spark-warehouse/
+metastore_db/
+derby.log
+
+# IDEs y Herramientas
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Control de versiones y Secretos
+.git/
+.gitignore
+.env
+
+# Instaladores y temporales
+*.dist-info/
+*.egg-info/

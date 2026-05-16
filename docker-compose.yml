@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  spark-env:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: power_audit_container
+    ports:
+      - "8888:8888"   # Jupyter Lab
+      - "4040:4040"   # Spark UI
+    volumes:
+      - .:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYSPARK_PYTHON=python3
+      - JUPYTER_TOKEN=audit
+      - NOTEBOOK_TOKEN=audit
