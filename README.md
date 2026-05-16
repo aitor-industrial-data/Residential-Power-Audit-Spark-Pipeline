@@ -1,6 +1,39 @@
-# Residential Power Audit — Spark Pipeline
+<div align="center">
 
-> **De 2 millones de registros de telemetría eléctrica a decisiones de ahorro cuantificadas, mediante Apache Spark y conocimiento de dominio de ingeniería eléctrica.**
+```
+██████╗  ██████╗ ██╗    ██╗███████╗██████╗      █████╗ ██╗   ██╗██████╗ ██╗████████╗
+██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗    ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
+██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝    ███████║██║   ██║██║  ██║██║   ██║
+██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗    ██╔══██║██║   ██║██║  ██║██║   ██║
+██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║    ██║  ██║╚██████╔╝██████╔╝██║   ██║
+╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
+```
+
+**Auditoría energética residencial sobre 2 millones de registros mediante Apache Spark**
+
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-4.0-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Architecture](https://img.shields.io/badge/Arquitectura-Medallón-8B5CF6?style=flat-square)
+![Hypotheses](https://img.shields.io/badge/Hipótesis-4%20validadas-22C55E?style=flat-square)
+![Savings](https://img.shields.io/badge/Ahorro-~428%20€%2Faño-F59E0B?style=flat-square)
+![Dataset](https://img.shields.io/badge/Dataset-UCI%20CC%20BY%204.0-0EA5E9?style=flat-square)
+
+</div>
+
+---
+
+## Índice
+
+- [El problema](#el-problema)
+- [Resultados de un vistazo](#resultados-de-un-vistazo)
+- [Las 4 hipótesis](#las-4-hipótesis)
+- [Impacto económico](#impacto-económico)
+- [Ejecución rápida](#ejecución-rápida)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Documentación técnica](#documentación-técnica)
+- [Stack tecnológico](#stack-tecnológico)
+- [Sobre el autor](#sobre-el-autor)
 
 ---
 
@@ -140,7 +173,7 @@ docker compose up -d --build
 ```
 
 - **http://localhost:8888?token=audit** → JupyterLab con Spark (token ya configurado)
-
+- **http://localhost:4040** → Spark UI *(disponible durante la ejecución de jobs)*
 
 > El dataset (~132 MB) se descarga automáticamente desde el repositorio oficial de UCI al ejecutar el primer notebook. Si la descarga automática falla, el notebook muestra instrucciones paso a paso para hacerlo manualmente.
 
@@ -152,16 +185,12 @@ make test   # valida integridad del dato y reproducibilidad de hipótesis
 make clean  # elimina cachés y artefactos temporales de Spark
 ```
 
-### Detener el entorno
-
-Cuando hayas terminado de trabajar, puedes apagar los contenedores y liberar los recursos del sistema (RAM/CPU) ejecutando desde la raíz del proyecto:
+Para apagar el entorno y liberar recursos:
 
 ```bash
-docker compose down
+docker compose down      # apaga los contenedores, mantiene los datos
+docker compose down -v   # apaga y borra volúmenes (reseteo total)
 ```
-* `docker compose down` $\rightarrow$ Apaga los contenedores pero **mantiene** los datos guardados en los volúmenes locales.
-* `docker compose down -v` $\rightarrow$ Apaga los contenedores y **borra los volúmenes temporales**. Es ideal si quieres un reseteo total del entorno de datos para la próxima vez.
-
 
 ---
 
@@ -180,11 +209,8 @@ Residential-Power-Audit-Spark-Pipeline/
 │       └── spark_session.py              # Inicialización compartida del motor Spark
 │
 ├── 📊 docs/
-│   ├── 00_Data_dictionary.md             # Especificaciones técnicas del dataset
-│   ├── 01_Project_Proposal.md            # Marco analítico e hipótesis de ingeniería
-│   ├── 02_Global_Conclusions.md          # Síntesis ejecutiva y recomendaciones
-│   ├── 03_FINAL_REPORT_[...].md          # Informe técnico pericial completo
-│   └── H1–H4_*.png                       # Evidencia visual por hipótesis
+│   ├── figures/                          # Gráficos de evidencia exportados por los notebooks
+│   └── reports/                          # Documentación técnica del proyecto
 │
 ├── 🗄️ data_storage/
 │   ├── source/                           # Dataset original (.txt) — no incluido en repo*
@@ -200,11 +226,11 @@ Residential-Power-Audit-Spark-Pipeline/
 │   └── test_etl.py                       # Validación de volumen, integridad y H3
 │
 ├── docker-compose.yml
-├── Makefile                              # Automatización de tareas
+├── Makefile                              # Automatización: run · test · clean
 ├── requirements.txt
 └── README.md
 
-* El dataset (~132 MB) se descarga automáticamente desde UCI ML Repository.
+* El dataset (~132 MB) se descarga automáticamente desde UCI ML Repository al ejecutar 00_ETL_Pipeline.
 ```
 
 ---
@@ -219,8 +245,6 @@ Residential-Power-Audit-Spark-Pipeline/
 | [`03_FINAL_REPORT.md`](./docs/reports/03_FINAL_REPORT.md) | Informe técnico pericial completo con evidencia cuantificada por hipótesis |
 
 ---
-
-
 
 ## Stack tecnológico
 
@@ -241,10 +265,14 @@ Docker + JupyterLab               Entorno reproducible sin configuración manual
 
 **Aitor** — Ingeniero Técnico Industrial Eléctrico con 10 años en automatización industrial, diseño eléctrico y sistemas de control. Aplico ese dominio técnico a proyectos de Data Engineering donde el contexto de negocio marca la diferencia entre un análisis correcto y uno útil.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aitor-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/aitor)
-[![GitHub](https://img.shields.io/badge/GitHub-aitor--industrial--data-181717?style=flat&logo=github)](https://github.com/aitor-industrial-data)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aitor-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/aitor)
+[![GitHub](https://img.shields.io/badge/GitHub-aitor--industrial--data-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/aitor-industrial-data)
 
 ---
 
+<div align="center">
+
 *Dataset: UCI Individual Household Electric Power Consumption · Sceaux, Francia · 2006–2010 · Licencia CC BY 4.0*  
 *DOI: [10.24432/C58K54](https://doi.org/10.24432/C58K54)*
+
+</div>
