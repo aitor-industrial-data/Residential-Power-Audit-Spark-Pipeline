@@ -192,7 +192,7 @@ El análisis masivo confirma que la instalación está sobredimensionada. Los pi
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./figures/H1_Frequency_LoadShift_Plot.png" alt="H1 Load Shift Plot" width="1100">
+  <img src="../figures/H1_Frequency_LoadShift_Plot.png" alt="H1 Load Shift Plot" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
@@ -219,7 +219,7 @@ El análisis identifica un incidente por factor humano (olvido operativo) de alt
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./figures/H2_Oven_Incident_Power_Analysis.png" alt="H2 Oven Incident Analysis" width="1100">
+  <img src="../figures/H2_Oven_Incident_Power_Analysis.png" alt="H2 Oven Incident Analysis" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
@@ -248,7 +248,7 @@ La hipótesis se valida con un resultado de 37.66%, duplicando con creces el umb
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./figures/H3_NILM_Fridge_Signature.png" alt="H3 NILM Fridge Signature" width="1100">
+  <img src="../figures/H3_NILM_Fridge_Signature.png" alt="H3 NILM Fridge Signature" width="1100">
 </p>
 
 
@@ -275,8 +275,8 @@ La hipótesis se valida con un resultado de 37.66%, duplicando con creces el umb
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./figures/H4_correlation_stress.png" alt="H4 Correlation Stress" width="1100">
-  <img src="./figures/H4_root_cause_analysis.png" alt="H4 Root Cause Analysis" width="1100">
+  <img src="../figures/H4_correlation_stress.png" alt="H4 Correlation Stress" width="1100">
+  <img src="../figures/H4_root_cause_analysis.png" alt="H4 Root Cause Analysis" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
