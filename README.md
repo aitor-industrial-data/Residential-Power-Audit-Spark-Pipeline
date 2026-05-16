@@ -40,7 +40,7 @@ El análisis forense de la composición de carga demuestra que los picos (>8 kW)
 **Conclusión:** la potencia contratada puede reducirse de 10,35 kW → **6,9 kW** desplazando únicamente el ciclo de lavado fuera de la franja crítica. Ahorro en término fijo: **inmediato y sin inversión**.
 
 <details>
-<summary><b>📈 Ver evidencia — Frecuencia de picos críticos por hora vs. demanda media real</b></summary>
+<summary><b>📈 Ver evidencia — Histórico de picos criticos vs. demanda media real</b></summary>
 <br>
 
 ![H1 Load Shift Plot](./docs/figures/H1_Frequency_LoadShift_Plot.png)
