@@ -1,5 +1,5 @@
 
-> # 🏁 FINAL REPORT: Industrial Energy Analytics
+> # 🏁 FINAL REPORT: Residential Power Audit — Spark Pipeline
     Sector: Infraestructura Eléctrica e Ingeniería de Datos
     Responsable: Aitor (Ingeniero Técnico Industrial)
     Fecha: Febrero 2026
@@ -32,7 +32,7 @@ La finalidad primordial de esta implementación es la construcción de un pipeli
 * **Diagnóstico de Calidad de Suministro:** Correlación entre picos de demanda y caídas de tensión por impedancia (<210V) para evaluar el estrés en la electrónica de control.
 
 ### Enfoque de Ingeniería de Datos
-Bajo la metodología de un Ingeniero Técnico Industrial, el proyecto trasciende el análisis estadístico simple para centrarse en la integridad del sistema. Utilizando **Apache Spark** como motor de computación distribuida, se garantiza una arquitectura que permite el procesamiento de millones de filas con latencia mínima. Este enfoque asegura que el sistema sea capaz de escalar desde una unidad habitacional hasta el entorno de una red eléctrica inteligente (Smart Grid), manteniendo la precisión técnica y la paridad con entornos de producción mediante el uso de entornos **Linux nativos sobre WSL2 y VS Code Remote.**
+Bajo la metodología de un Ingeniero Técnico Industrial, el proyecto trasciende el análisis estadístico simple para centrarse en la integridad del sistema. Utilizando **Apache Spark** como motor de computación distribuida, se garantiza una arquitectura que permite el procesamiento de millones de filas con latencia mínima. Este enfoque asegura que el sistema sea capaz de escalar desde una unidad habitacional hasta el entorno de una red eléctrica inteligente (Smart Grid), manteniendo la precisión técnica y la paridad con entornos de producción mediante el uso de **Docker con imagen `jupyter/pyspark-notebook:spark-3.5.0`**, garantizando un entorno completamente reproducible sin dependencias locales.
 
 ---
 ---
@@ -50,7 +50,7 @@ El pipeline opera en un entorno de desarrollo de alto nivel que asegura la parid
 El flujo de datos se ha estructurado siguiendo el patrón de arquitectura de medallas (Bronze/Silver), optimizando cada etapa para el hardware Intel i5-1334U.
 
 #### A. Source Layer (Capa de Origen)
-El punto de entrada es el dataset 'household_power_consumption.txt', ubicado en la ruta compartida de WSL2 (/mnt/c/Users/...).
+O punto de entrada es el dataset `household_power_consumption.txt`, ubicado en `data_storage/source/` dentro del repositorio.
 * **Formato y Volumen:** Estructura de archivo plano con delimitador ; y un volumen superior a los 2 millones de registros.
 * **Desafío Técnico:** La lectura convencional línea a línea resultaría ineficiente. Se aprovecha la capacidad de I/O paralelo de Spark para segmentar la carga del archivo, permitiendo que los 12 hilos lógicos del procesador trabajen simultáneamente en la ingesta.
 
@@ -192,7 +192,7 @@ El análisis masivo confirma que la instalación está sobredimensionada. Los pi
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./H1_Frequency_LoadShift_Plot.png" alt="Industrial Energy Analysis" width="1100">
+  <img src="./figures/H1_Frequency_LoadShift_Plot.png" alt="H1 Load Shift Plot" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
@@ -219,7 +219,7 @@ El análisis identifica un incidente por factor humano (olvido operativo) de alt
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./H2_Oven_Incident_Power_Analysis.png" alt="Industrial Energy Analysis" width="1100">
+  <img src="./figures/H2_Oven_Incident_Power_Analysis.png" alt="H2 Oven Incident Analysis" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
@@ -248,7 +248,7 @@ La hipótesis se valida con un resultado de 37.66%, duplicando con creces el umb
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./H3_NILM_Fridge_Signature.png" alt="Industrial Energy Analysis" width="1100">
+  <img src="./figures/H3_NILM_Fridge_Signature.png" alt="H3 NILM Fridge Signature" width="1100">
 </p>
 
 
@@ -275,8 +275,8 @@ La hipótesis se valida con un resultado de 37.66%, duplicando con creces el umb
 
 * **Visual Evidence:** <br>
 <p align="center">
-  <img src="./H4_correlation_stress.png" alt="Industrial Energy Analysis" width="1100">
-  <img src="./H4_root_cause_analysis.png" alt="Industrial Energy Analysis" width="1100">
+  <img src="./figures/H4_correlation_stress.png" alt="H4 Correlation Stress" width="1100">
+  <img src="./figures/H4_root_cause_analysis.png" alt="H4 Root Cause Analysis" width="1100">
 </p>
 
 * **Conclusión e Impacto en el Negocio:**
@@ -298,10 +298,10 @@ A continuación, se tabula el impacto de cada vector de análisis sobre la opera
 
 | Hipótesis | Estado | Factor Crítico Identificado | Impacto en Negocio / Ahorro | Relevancia Técnica | Evidencia Gráfica |
 | :--- | :---: | :--- | :--- | :--- | :--- |
-| **H1: Simultaneidad** | ✅ Validada | Sobredimensionamiento estructural (Pico >10kW). | **Alto:** Reducción de término fijo al bajar a 6.9 kW. | Optimización de potencia contratada. | [`H1_Frequency_LoadShift_Plot`](./H1_Frequency_LoadShift_Plot.png) |
-| **H2: Outliers (Horno)** | ✅ Validada | Factor Humano (Olvido operativo el 05/06/2010). | **Medio:** Prevención de desperdicio energético (72% de ahorro). | NIALM (Firma de carga del activo). | [`H2_Oven_Incident_Power_Analysis.png`](./H2_Oven_Incident_Power_Analysis.png) |
-| **H3: Consumo Base** | ✅ **CRÍTICA** | Standby del **37.66%** (Ineficiencia masiva). | **Muy Alto:** Ahorro proyectado de **1,068 kWh/año**. | NILM: Desagregación de carga y perfilado de activos. | [`H3_NILM_Fridge_Signature.png`](./H3_NILM_Fridge_Signature.png) |
-| **H4: Estabilidad** | ⚠️ Parcial | Deficiencia en Red Externa (Distribuidora). | **Bajo (Económico) / Alto (Activos):** Vida útil. | Diagnóstico de calidad de suministro. | [`H4_correlation_stress.png`](./H4_correlation_stress.png) [`H4_root_cause_analysis.png`](./H4_root_cause_analysis.png)|
+| **H1: Simultaneidad** | ✅ Validada | Sobredimensionamiento estructural (Pico >10kW). | **Alto:** Reducción de término fijo al bajar a 6.9 kW. | Optimización de potencia contratada. | [`H1_Frequency_LoadShift_Plot`](./figures/H1_Frequency_LoadShift_Plot.png) |
+| **H2: Outliers (Horno)** | ✅ Validada | Factor Humano (Olvido operativo el 05/06/2010). | **Medio:** Prevención de desperdicio energético (72% de ahorro). | NIALM (Firma de carga del activo). | [`H2_Oven_Incident_Power_Analysis.png`](./figures/H2_Oven_Incident_Power_Analysis.png) |
+| **H3: Consumo Base** | ✅ **CRÍTICA** | Standby del **37.66%** (Ineficiencia masiva). | **Muy Alto:** Ahorro proyectado de **1,068 kWh/año**. | NILM: Desagregación de carga y perfilado de activos. | [`H3_NILM_Fridge_Signature.png`](./figures/H3_NILM_Fridge_Signature.png) |
+| **H4: Estabilidad** | ⚠️ Parcial | Deficiencia en Red Externa (Distribuidora). | **Bajo (Económico) / Alto (Activos):** Vida útil. | Diagnóstico de calidad de suministro. | [`H4_correlation_stress.png`](./figures/H4_correlation_stress.png) [`H4_root_cause_analysis.png`](./figures/H4_root_cause_analysis.png)|
 
 
 ### 6.2 Conclusiones Transversales de Ingeniería
@@ -349,26 +349,29 @@ Para escalar este proyecto al siguiente nivel de Data Engineering, se proponen l
 
 >## 7. Entregables Técnicos y Configuración
 
-* **Notebook Principal:** [`notebooks/01_EDA_Electric_Data.ipynb`](../notebooks/01_EDA_Electric_Data.ipynb)
-* **Datos de Salida:** `data_storage/work/` (Contiene los archivos Parquet/CSV procesados por Spark).
-* **Documentación:** [`docs/`](./) (Esquemas, evidencias visuales e informe final).
+* **Notebooks:** [`notebooks/`](../notebooks/) — pipeline ETL y validación de las 4 hipótesis en notebooks independientes.
+* **Datos de Salida:** `data_storage/work/` — archivos Parquet y reportes CSV generados por Spark.
+* **Documentación:** [`docs/reports/`](./reports/) — esquemas, evidencias visuales e informe final.
+* **Tests:** [`tests/test_etl.py`](../tests/test_etl.py) — validación de integridad del dato y reproducibilidad de hipótesis.
 
-### 7.1 Cómo Ejecutar (Guía de Inicio Rápido):**
-Para reproducir este análisis de Big Data en tu entorno de VS Code con WSL2, sigue estos pasos:
-* 1. Preparación del Entorno en WSL2
-Abre tu terminal de Ubuntu (o la terminal integrada en VS Code) y asegúrate de estar en el directorio del proyecto:
+### 7.1 Cómo Ejecutar (Guía de Inicio Rápido)
 
-        ```bash
-        cd ~/Documents/Data-Projects-Repo/03_SQL_Big_Data_Spark/03.01_CAPSTONE_Industrial_Energy_Analytics
-        ```
-* 2. Requisitos Previos
-Asegúrate de tener instalado PySpark en tu entorno de Ubuntu:
+La forma recomendada de reproducir este análisis es mediante Docker, sin necesidad de configurar ninguna dependencia local:
 
-        ```Bash
-        pip install pyspark
-        ```
-* 3. Ejecución en VS Code
-    * Abrir la carpeta del proyecto en VS Code (asegúrate de que el indicador azul abajo a la izquierda diga WSL: Ubuntu).
-    * Abrir el archivo `notebooks/01_EDA_Electric_Data.ipynb`.
-    * Seleccionar el Kernel de Python de tu entorno de Ubuntu.
-    * Ejecutar todas las celdas para procesar los registros y generar los resultados.
+```bash
+git clone https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline.git
+cd Residential-Power-Audit-Spark-Pipeline
+docker compose up -d --build
+```
+
+Accede a **http://localhost:8888?token=audit** para abrir JupyterLab con Spark preconfigurado.
+
+Desde el terminal integrado de JupyterLab, ejecuta el pipeline completo con:
+
+```bash
+make run    # ETL → H1 → H2 → H3 → H4 en secuencia
+make test   # valida integridad del dato y reproducibilidad de hipótesis
+make clean  # elimina cachés y artefactos temporales de Spark
+```
+
+> El dataset (~132 MB) se descarga automáticamente desde el repositorio oficial de UCI al ejecutar el primer notebook. Si la descarga falla, el notebook muestra instrucciones detalladas para hacerlo manualmente.

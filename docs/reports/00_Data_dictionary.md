@@ -1,6 +1,6 @@
 # Diccionario de Datos: Individual Household Power Consumption
 
-Este documento define las especificaciones técnicas, unidades de medida y rangos de operación de las variables del dataset utilizado para el proyecto SparkGrid-Insights
+Este documento define las especificaciones técnicas, unidades de medida y rangos de operación de las variables del dataset utilizado para el proyecto Residential Power Audit — Spark Pipeline
 
 
 ## 1. Información General

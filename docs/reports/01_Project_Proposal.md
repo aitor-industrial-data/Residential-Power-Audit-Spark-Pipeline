@@ -1,4 +1,4 @@
-# Propuesta de Proyecto: Industrial Energy Analytics (Spark Capstone)
+# Propuesta de Proyecto: Residential Power Audit — Spark Pipeline
 **Sector:** Infraestructura Eléctrica e Ingeniería de Datos  
 **Responsable:** Aitor (Ingeniero Técnico Industrial)  
 **Fecha:** Febrero 2026

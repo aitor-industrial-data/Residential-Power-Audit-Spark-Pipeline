@@ -1,15 +1,13 @@
 <div align="center">
 
-```
-██████╗  ██████╗ ██╗    ██╗███████╗██████╗      █████╗ ██╗   ██╗██████╗ ██╗████████╗
-██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗    ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
-██████╔╝██║   ██║██║ █╗ ██║█████╗  ██████╔╝    ███████║██║   ██║██║  ██║██║   ██║
-██╔═══╝ ██║   ██║██║███╗██║██╔══╝  ██╔══██╗    ██╔══██║██║   ██║██║  ██║██║   ██║
-██║     ╚██████╔╝╚███╔███╔╝███████╗██║  ██║    ██║  ██║╚██████╔╝██████╔╝██║   ██║
-╚═╝      ╚═════╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
-```
+<h1 style="font-size: 2.8em; margin-bottom: 0px;">⚡ RESIDENTIAL POWER AUDIT</h1>
+<p style="font-size: 1.4em; color: #8b949e; letter-spacing: 2px; margin-top: 5px;">— SPARK PIPELINE —</p>
 
-**Auditoría energética residencial sobre 2 millones de registros mediante Apache Spark**
+<br>
+
+### **Auditoría energética residencial sobre 2 millones de registros mediante Apache Spark**
+
+<br>
 
 ![Apache Spark](https://img.shields.io/badge/Apache%20Spark-4.0-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -20,8 +18,6 @@
 ![Dataset](https://img.shields.io/badge/Dataset-UCI%20CC%20BY%204.0-0EA5E9?style=flat-square)
 
 </div>
-
----
 
 ## Índice
 
