@@ -298,10 +298,10 @@ A continuación, se tabula el impacto de cada vector de análisis sobre la opera
 
 | Hipótesis | Estado | Factor Crítico Identificado | Impacto en Negocio / Ahorro | Relevancia Técnica | Evidencia Gráfica |
 | :--- | :---: | :--- | :--- | :--- | :--- |
-| **H1: Simultaneidad** | ✅ Validada | Sobredimensionamiento estructural (Pico >10kW). | **Alto:** Reducción de término fijo al bajar a 6.9 kW. | Optimización de potencia contratada. | [`H1_Frequency_LoadShift_Plot`](./figures/H1_Frequency_LoadShift_Plot.png) |
-| **H2: Outliers (Horno)** | ✅ Validada | Factor Humano (Olvido operativo el 05/06/2010). | **Medio:** Prevención de desperdicio energético (72% de ahorro). | NIALM (Firma de carga del activo). | [`H2_Oven_Incident_Power_Analysis.png`](./figures/H2_Oven_Incident_Power_Analysis.png) |
-| **H3: Consumo Base** | ✅ **CRÍTICA** | Standby del **37.66%** (Ineficiencia masiva). | **Muy Alto:** Ahorro proyectado de **1,068 kWh/año**. | NILM: Desagregación de carga y perfilado de activos. | [`H3_NILM_Fridge_Signature.png`](./figures/H3_NILM_Fridge_Signature.png) |
-| **H4: Estabilidad** | ⚠️ Parcial | Deficiencia en Red Externa (Distribuidora). | **Bajo (Económico) / Alto (Activos):** Vida útil. | Diagnóstico de calidad de suministro. | [`H4_correlation_stress.png`](./figures/H4_correlation_stress.png) [`H4_root_cause_analysis.png`](./figures/H4_root_cause_analysis.png)|
+| **H1: Simultaneidad** | ✅ Validada | Sobredimensionamiento estructural (Pico >10kW). | **Alto:** Reducción de término fijo al bajar a 6.9 kW. | Optimización de potencia contratada. | [`H1_Frequency_LoadShift_Plot`](../figures/H1_Frequency_LoadShift_Plot.png) |
+| **H2: Outliers (Horno)** | ✅ Validada | Factor Humano (Olvido operativo el 05/06/2010). | **Medio:** Prevención de desperdicio energético (72% de ahorro). | NIALM (Firma de carga del activo). | [`H2_Oven_Incident_Power_Analysis.png`](../figures/H2_Oven_Incident_Power_Analysis.png) |
+| **H3: Consumo Base** | ✅ **CRÍTICA** | Standby del **37.66%** (Ineficiencia masiva). | **Muy Alto:** Ahorro proyectado de **1,068 kWh/año**. | NILM: Desagregación de carga y perfilado de activos. | [`H3_NILM_Fridge_Signature.png`](../figures/H3_NILM_Fridge_Signature.png) |
+| **H4: Estabilidad** | ⚠️ Parcial | Deficiencia en Red Externa (Distribuidora). | **Bajo (Económico) / Alto (Activos):** Vida útil. | Diagnóstico de calidad de suministro. | [`H4_correlation_stress.png`](../figures/H4_correlation_stress.png) [`H4_root_cause_analysis.png`](../figures/H4_root_cause_analysis.png)|
 
 
 ### 6.2 Conclusiones Transversales de Ingeniería
@@ -349,10 +349,10 @@ Para escalar este proyecto al siguiente nivel de Data Engineering, se proponen l
 
 >## 7. Entregables Técnicos y Configuración
 
-* **Notebooks:** [`notebooks/`](../notebooks/) — pipeline ETL y validación de las 4 hipótesis en notebooks independientes.
+* **Notebooks:** [`notebooks/`](../../notebooks/) — pipeline ETL y validación de las 4 hipótesis en notebooks independientes.
 * **Datos de Salida:** `data_storage/work/` — archivos Parquet y reportes CSV generados por Spark.
-* **Documentación:** [`docs/reports/`](./reports/) — esquemas, evidencias visuales e informe final.
-* **Tests:** [`tests/test_etl.py`](../tests/test_etl.py) — validación de integridad del dato y reproducibilidad de hipótesis.
+* **Documentación:** [`docs/reports/`](../reports/) — esquemas, evidencias visuales e informe final.
+* **Tests:** [`tests/test_etl.py`](../../tests/test_etl.py) — validación de integridad del dato y reproducibilidad de hipótesis.
 
 ### 7.1 Cómo Ejecutar (Guía de Inicio Rápido)
 

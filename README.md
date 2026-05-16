@@ -21,19 +21,19 @@
 
 ## Índice
 
-- [El problema](#el-problema)
-- [Resultados de un vistazo](#resultados-de-un-vistazo)
-- [Las 4 hipótesis](#las-4-hipótesis)
-- [Impacto económico](#impacto-económico)
-- [Ejecución rápida](#ejecución-rápida)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Documentación técnica](#documentación-técnica)
-- [Stack tecnológico](#stack-tecnológico)
-- [Sobre el autor](#sobre-el-autor)
+- [1. El problema](#el-problema)
+- [2. Resultados de un vistazo](#resultados-de-un-vistazo)
+- [3. Las 4 hipótesis](#las-4-hipótesis)
+- [4. Impacto económico](#impacto-económico)
+- [5. Ejecución rápida](#ejecución-rápida)
+- [6. Estructura del proyecto](#estructura-del-proyecto)
+- [7. Documentación técnica](#documentación-técnica)
+- [8. Stack tecnológico](#stack-tecnológico)
+- [9. Sobre el autor](#sobre-el-autor)
 
 ---
 
-## El problema
+## 1. El problema
 
 La mayoría de instalaciones residenciales **pagan de más en electricidad** sin saberlo — no por consumir demasiado, sino por ineficiencias que ninguna factura muestra:
 
@@ -45,7 +45,7 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 
 ---
 
-## Resultados de un vistazo
+## 2. Resultados de un vistazo
 
 | Métrica | Valor |
 |---|---|
@@ -58,7 +58,7 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 
 ---
 
-## Las 4 hipótesis
+## 3. Las 4 hipótesis
 
 ### H1 · Optimización de curva de carga ✅ Validada
 
@@ -145,7 +145,7 @@ El análisis descarta por completo la instalación interna como causa: la vivien
 
 ---
 
-## Impacto económico
+## 4. Impacto económico
 
 > Cálculos sobre tarifa PVPC española 2025: **~60 €/kW·año** en término de potencia · **0,137 €/kWh** en energía (fuente: REE / CNMC). El dataset es de una vivienda en Francia — los hallazgos se extrapolan al mercado tarifario español, contexto de aplicación profesional del análisis.
 
@@ -160,7 +160,7 @@ El análisis descarta por completo la instalación interna como causa: la vivien
 
 ---
 
-## Ejecución rápida
+## 5. Ejecución rápida
 
 ```bash
 git clone https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline.git
@@ -190,7 +190,7 @@ docker compose down -v   # apaga y borra volúmenes (reseteo total)
 
 ---
 
-## Estructura del proyecto
+## 6. Estructura del proyecto
 
 ```
 Residential-Power-Audit-Spark-Pipeline/
@@ -231,7 +231,7 @@ Residential-Power-Audit-Spark-Pipeline/
 
 ---
 
-## Documentación técnica
+## 7. Documentación técnica
 
 | Documento | Descripción |
 |---|---|
@@ -242,7 +242,7 @@ Residential-Power-Audit-Spark-Pipeline/
 
 ---
 
-## Stack tecnológico
+## 8. Stack tecnológico
 
 ```
 Apache Spark 4.0 (PySpark)       Motor de computación distribuida en memoria
@@ -257,7 +257,7 @@ Docker + JupyterLab               Entorno reproducible sin configuración manual
 
 ---
 
-## Sobre el autor
+## 9. Sobre el autor
 
 **Aitor** — Ingeniero Técnico Industrial Eléctrico con 10 años en automatización industrial, diseño eléctrico y sistemas de control. Aplico ese dominio técnico a proyectos de Data Engineering donde el contexto de negocio marca la diferencia entre un análisis correcto y uno útil.
 
