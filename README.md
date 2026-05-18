@@ -47,6 +47,12 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 
 ## 2. Resultados de un vistazo
 
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### 📊 Resultados de un vistazo
+
 | Métrica | Valor |
 |---|---|
 | Registros procesados | 2.075.259 (4 años · muestreo por minuto) |
@@ -54,7 +60,24 @@ Las herramientas convencionales (Excel, SQL tradicional) colapsan ante el volume
 | Tiempo ETL completo | ~17 segundos |
 | Almacenamiento | CSV → Parquet/Snappy (reducción >80%) |
 | Hipótesis validadas | 4 de 4 · (3 ✅ confirmadas · 1 ⚠️ parcial) |
-| **Ahorro proyectado** | **~428 €/año con inversión inicial de ~360 €** |
+| **Ahorro proyectado** | **~428 €/año con inversión de ~360 €** |
+
+</td>
+<td valign="top" width="50%">
+
+### 📓 Ver notebooks
+
+| Notebook | Descripción |
+|---|---|
+| [00 · ETL Pipeline](https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline/blob/main/notebooks/00_ETL_Pipeline.ipynb) | Ingesta, limpieza y feature engineering → Parquet |
+| [01 · H1 Load Optimization](https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline/blob/main/notebooks/01_H1_Load_Optimization.ipynb) | Análisis de simultaneidad y curva de carga |
+| [02 · H2 Anomaly Detection](https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline/blob/main/notebooks/02_H2_Anomaly_Detection.ipynb) | Detección de anomalías 3σ + análisis forense |
+| [03 · H3 NILM Standby](https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline/blob/main/notebooks/03_H3_NILM_Standby.ipynb) | Consumo residual + desagregación NILM |
+| [04 · H4 Grid Quality](https://github.com/aitor-industrial-data/Residential-Power-Audit-Spark-Pipeline/blob/main/notebooks/04_H4_Grid_Quality.ipynb) | Calidad de suministro y estabilidad de tensión |
+
+</td>
+</tr>
+</table>
 
 ---
 
